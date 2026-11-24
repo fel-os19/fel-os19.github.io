@@ -1,11 +1,5 @@
 'use strict';
-//tema persistente
-const root=document.documentElement;
-const es=root.lang==='es';
-const toggle=document.querySelector('.theme');
-function syncTheme(){toggle?.setAttribute('aria-pressed',String(root.dataset.theme==='light'));}
-syncTheme();
-toggle?.addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='light'?'dark':'light';try{localStorage.setItem('fg-theme-v3',root.dataset.theme)}catch(e){}syncTheme()});
+const es=document.documentElement.lang==='es';
 //busqueda y filtros
 const filters=document.querySelector('.filters');
 if(filters){filters.hidden=false;const search=document.querySelector('#project-search');const cards=[...document.querySelectorAll('.catalog .project')];let category='all';const normalize=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();function update(){const query=normalize(search.value.trim());let count=0;cards.forEach(card=>{const show=(category==='all'||card.dataset.cat===category)&&normalize(card.textContent).includes(query);card.hidden=!show;if(show)count++});document.querySelector('#results').textContent=es?`${count} de ${cards.length} proyectos`:`${count} of ${cards.length} projects`;}filters.querySelectorAll('button').forEach(button=>button.addEventListener('click',()=>{category=button.dataset.filter;filters.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));update()}));search.addEventListener('input',update);update()}

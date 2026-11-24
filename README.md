@@ -1,26 +1,26 @@
-# FEL-OS19 · V7.2 Release
-Static bilingual personal portfolio for GitHub Pages. No build step or dependencies required. `index.html` and `en.html` are the home pages. The lab is a standalone JavaScript educational demo, separate from the original C academic project. Credentials have individual verification links and images from the provided screenshots. To deploy, upload the contents at the repository root on main, replacing files with identical names. Do not upload the archive or rename files with duplicate suffixes.
+# FEL-OS19 / V8.2 — Personal Space
 
-V5: local bilingual site search, structured case studies, mobile refinements, and quick links. No tracking or new dependencies.
+Portafolio estático bilingüe, exclusivamente claro. Inspiración visual editorial, diseño y código propios. Conserva el CV y certificados de V7.3. No requiere Node, npm ni dependencias de compilación.
 
-## V6
-CV real previsualizado en PNG, con PDF accesible. Ahorcado JavaScript con vocabulario exportado desde CMUdict y TextBlob (no NLTK en navegador). Cuatro modelos de geometría 3D conceptuales con renderizado Canvas. Las fotos de certificados originales quedan pendientes.
+## Publicación
+1. Extraer el ZIP en una carpeta nueva. Subir **los archivos interiores** a la raíz del repositorio `fel-os19.github.io`, reemplazando los existentes. No subir el ZIP ni añadir sufijos a los nombres.
+2. Commit en `main`. GitHub Pages: Deploy from a branch → main → / (root). Mantener la configuración existente.
+3. Comprobar el despliegue en Actions y abrir https://fel-os19.github.io/?v=8.2. El pie de página indica V8.2.
 
-## V6.1
-Galería bilingüe de certificados con imágenes recortadas de las capturas proporcionadas, fechas y enlaces asociados. Las imágenes no son los PDF originales.
+## Estructura
+- index.html / en.html: portada estática con JavaScript ligero para contacto, navegación y proyectos seleccionados.
+- profile.html / profile-en.html: trayectoria, certificados con enlaces individuales.
+- cv.html / cv-en.html: CV y descarga directa de PDF.
+- projects.html / projects-en.html: catálogo, filtros y repositorios públicos.
+- lab.html / lab-en.html: simuladores y modelos 3D, independientes de la portada.
+- lab-game.html / lab-game-en.html: ahorcado bilingüe con selector de idioma de palabra.
+- personal-v8.css: identidad visual y adaptación móvil.
 
-## V6.2
-Paleta monocromática, superficies grafito y acentos blancos en todo el sitio; se conservan las funciones de V6.1.
+Para desarrollo local: `python -m http.server 8000` en esta carpeta, abrir http://localhost:8000. Los recursos locales funcionan sin backend; la lista de repositorios usa la API pública de GitHub si está disponible.
 
-## V7.0
-Conserva el diseño monocromático de V6.2. Añade Bubble Sort, Insertion Sort por intercambios adyacentes, planificación de CPU FCFS/Round Robin (llegadas simultáneas y sin costo de contexto), estadística descriptiva local (lista o TXT/CSV numérico sin encabezado), y tres modelos conceptuales: CPU, RAM y red neuronal. Accesos directos desde la portada e índice de búsqueda bilingüe. No requiere backend. Las demostraciones adicionales son educativas y no constituyen nuevos proyectos académicos realizados por el titular.
+Las ilustraciones de proyecto son conceptuales. No se incluyen fotografías personales ni correo público no confirmado. El laboratorio ofrece demostraciones educativas. Los CV originales se conservan. No se reutiliza código de Braydon Coyer.
 
-Verificación local: 23 páginas a 390 y 1440 px en Chromium con recursos locales incorporados; sin desbordamiento horizontal ni errores JS observados. Se verificó el orden final de ambos algoritmos, un caso FIFO, tiempo total Round Robin, media de una lista de prueba y renderizado de siete modelos. Pendiente prueba en Safari físico y publicación real.
+## V8.2 — Contacto
+El formulario bilingüe usa el endpoint público https://formspree.io/f/xppdkjlj. El correo receptor se administra en Formspree; no es necesario incluirlo en el código. Comprueba que tu cuenta y correo de destino estén verificados y realiza un envío real desde el sitio publicado. Las pruebas locales simulan las respuestas del servidor; no se enviaron mensajes reales.
 
-
-### V7.1
-Paleta monocromática conservada; color funcional verde/ámbar/azul en ordenamiento, histogramas, Dijkstra y planificación de CPU.
-
-
-### V7.2
-Color funcional también en ahorcado y modelos 3D (cobre, PCB y nodos); recursos versionados para reducir caché antigua. Subir todos los archivos directamente a la raíz de main. No subir el ZIP. Los modelos y simuladores son demostraciones educativas.
+Para una actualización limpia: clona el repositorio, respalda la rama actual, reemplaza solo los archivos del sitio (conserva .git y cualquier configuración personalizada como CNAME o workflows), copia los archivos de este paquete incluyendo .nojekyll, revisa git status y confirma un único commit en main. No elimines el repositorio.
