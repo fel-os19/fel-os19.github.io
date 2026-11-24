@@ -1,0 +1,2 @@
+//visor de diplomas con enlace directo alternativo
+(()=>{const d=document.querySelector('#cert-dialog');if(!d||typeof d.showModal!=='function')return;const preview=d.querySelector('[data-cert-preview]');document.querySelectorAll('[data-cert-image]').forEach(a=>a.addEventListener('click',e=>{if(e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();preview.src=a.href;preview.alt=a.querySelector('img').alt;d.showModal()}));d.querySelector('[data-close-cert]').addEventListener('click',()=>d.close());d.addEventListener('click',e=>{if(e.target===d)d.close()});})();
